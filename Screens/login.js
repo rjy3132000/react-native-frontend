@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet, ImageBackground, TouchableOpacity, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import TextInputWithLabel from "../Components/TextInputWithLabel";
-import ImagePath from "../constant/ImagePath";
 import ButtonComp from "../Components/ButtonComp";
 import LoginPage from "../assets/LoginImage.jpg";
 
 const Home = () => {
   const navigation = useNavigation();
-  const [isVisible, setIsVisible] = useState(true);
 
   return (
     <View style={styles.container}>
