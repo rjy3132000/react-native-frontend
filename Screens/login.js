@@ -14,7 +14,7 @@ const Home = () => {
           source={LoginPage}
           style={styles.imgStyles}
         >
-          <Text style={styles.loginTextStyles}>Login</Text>
+        <Text style={styles.loginTextStyles}>Login Screen</Text>
         </ImageBackground>
         <View style={styles.mainStyles}>
           <View style={styles.inputContainer}>
