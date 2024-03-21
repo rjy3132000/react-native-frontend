@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, ImageBackground, TouchableOpacity, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import TextInputWithLabel from "../Components/TextInputWithLabel";
 import ImagePath from "../constant/ImagePath";
@@ -20,19 +20,14 @@ const Home = () => {
           <Text style={styles.loginTextStyles}>Login</Text>
         </ImageBackground>
         <View style={styles.mainStyles}>
-          <TextInputWithLabel
-            Label={"Email Address"}
-            placeHolder={"Enter your email address"}
-            inputStyles={{ marginBottom: 28 }}
-            keyboardType="email-address"
-          />
-          <TextInputWithLabel
-            Label={"Password"}
-            placeHolder={"Enter your password"}
-            secureTextEntry={isVisible}
-            rightIcon={isVisible ? ImagePath.hideEye : imagePath.showEye}
-            onPressRight={() => setIsVisible(!isVisible)}
-          />
+          <View style={styles.inputContainer}>
+            <Text style={styles.LabelText}>username</Text>
+            <TextInput placeholder="Enter username" style={styles.TextInput}/>
+          </View>
+          <View>
+            <Text style={styles.LabelText}>password</Text>
+            <TextInput placeholder="Enter password" secureTextEntry={true} style={styles.TextInput}/>
+          </View>
           <TouchableOpacity activeOpacity={0.7} style={styles.forgetView}>
             <Text style={styles.forgetText}>Forget Password ?</Text>
           </TouchableOpacity>
@@ -91,6 +86,21 @@ const styles = StyleSheet.create({
         alignItems:"center", 
         marginBottom : 40,
         justifyContent:"center"
+    },
+    TextInput : {
+        borderBottomWidth : 1,
+        borderBottomColor : "rgba(0,0,0,.5)",
+        borderRadius : 4,
+        marginBottom : 10
+    },
+    LabelText : {
+        fontSize : 14,
+        color : "rgba(0,0,0,.5)",
+        textTransform : "capitalize",
+        marginBottom : 5
+    },
+    inputContainer : {
+        marginBottom : 15
     }
 });
 
