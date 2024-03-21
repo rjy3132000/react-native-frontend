@@ -10,7 +10,7 @@ function MyStact () {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Login" component={Login} />
-                <Stack.Screen name="Login" component={CRUD} />
+                <Stack.Screen name="CRUD" component={CRUD} />
             </Stack.Navigator>
         </NavigationContainer>
     )
