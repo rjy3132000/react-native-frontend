@@ -1,10 +1,10 @@
 import { View } from 'react-native';
-import MyStact from './routes/routes';
+import MyStacK from './routes/routes';
 
 export default function App() {
   return (
     <View>
-      <MyStact />
+      <MyStacK />
     </View>
   );
 }

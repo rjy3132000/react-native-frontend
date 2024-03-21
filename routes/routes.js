@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from "../Screens/login";
 import CRUD from "../Screens/CRUD";
 
-function MyStact () {
+function MyStacK () {
     const Stack = createNativeStackNavigator();
 
     return (
@@ -16,4 +16,4 @@ function MyStact () {
     )
 }
 
-export default MyStact
+export default MyStacK
