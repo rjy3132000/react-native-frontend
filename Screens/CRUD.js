@@ -1,27 +1,59 @@
-import React from "react";
-import { Button, Text, TextInput, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React, { useState } from "react";
+import { Button, Text, TextInput, View, StyleSheet } from "react-native";
+// import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
-  const navigation = useNavigation();
-  return (
-    <View>
-      <Text>Welcome to Add Notes</Text>
-      <View>
-        <Text>Enter First Name</Text>
-        <TextInput placeholder="Enter First Name" />
-      </View>
-      <View>
-        <Text>Enter Second Name</Text>
-        <TextInput placeholder="Enter Second Name" />
-      </View>
+  // const navigation = useNavigation();
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
 
-      {/* <Button
-        title="Back to Home"
-        onPress={() => navigation.navigate("Home")}
-      /> */}
+  const handleSubmit = () => {
+    // Handle form submission logic here
+    console.log("Name:", name);
+    console.log("lastName:", lastName);
+    setName("");
+    setLastName("");
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.label}>First Name:</Text>
+      <TextInput
+        style={styles.input}
+        value={name}
+        onChangeText={(text) => setName(text)}
+      />
+
+      <Text style={styles.label}>Last Name:</Text>
+      <TextInput
+        style={styles.input}
+        value={lastName}
+        onChangeText={(text) => setLastName(text)}
+      />
+
+      <Button title="Submit" onPress={handleSubmit} />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: "#fff",
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginBottom: 8,
+  },
+  input: {
+    height: 40,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    marginBottom: 16,
+    paddingHorizontal: 8,
+  },
+});
 
 export default Login;
