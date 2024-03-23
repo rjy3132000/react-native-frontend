@@ -30,7 +30,7 @@ const Home = () => {
           </TouchableOpacity>
           <ButtonComp
             btnText={"login"}
-            onPress={() => alert("Login Success")}
+            onPress={() => navigation.navigate("Login")}
           />
         </View>
       </View>
