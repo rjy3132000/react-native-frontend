@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import { Button, Text, TextInput, View, StyleSheet } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo } from "../RTK/slice/todoSlice";
 // import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
   // const navigation = useNavigation();
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
+  const notes = useSelector((state) => state.todos.todos);
+  const dispatch = useDispatch();
+
+  console.log(notes);
 
   const handleSubmit = () => {
     // Handle form submission logic here
-    console.log("Name:", name);
-    console.log("lastName:", lastName);
+    // console.log("Name:", name);
+    // console.log("lastName:", lastName);
+    dispatch(addTodo({ id: notes.length + 1, name, lastName }));
     setName("");
     setLastName("");
   };
@@ -30,8 +37,18 @@ const Login = () => {
         value={lastName}
         onChangeText={(text) => setLastName(text)}
       />
-
       <Button title="Submit" onPress={handleSubmit} />
+      {notes.length > 0 ? (
+        notes.map((note, index) => (
+          <View key={index}>
+            <Text>
+              {note.name} - {note.lastName}
+            </Text>
+          </View>
+        ))
+      ) : (
+        <Text>There is no Note</Text>
+      )}
     </View>
   );
 };

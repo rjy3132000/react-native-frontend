@@ -1,7 +1,7 @@
 import * as React from "react";
 import MyStack from "./routes/routes";
 import { Provider } from "react-redux";
-import { store } from "./RKT/store";
+import { store } from "./RTK/store";
 
 const App = () => {
   return (
