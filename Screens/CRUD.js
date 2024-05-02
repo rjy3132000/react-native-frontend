@@ -11,12 +11,7 @@ const Login = () => {
   const notes = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
 
-  console.log(notes);
-
   const handleSubmit = () => {
-    // Handle form submission logic here
-    // console.log("Name:", name);
-    // console.log("lastName:", lastName);
     dispatch(addTodo({ id: notes.length + 1, name, lastName }));
     setName("");
     setLastName("");
