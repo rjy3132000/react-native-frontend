@@ -41,6 +41,9 @@ const Home = () => {
     } catch (error) {
       Alert.alert("Something went wrong");
     }
+    setName("");
+    setUserName("");
+    setPassword("");
   };
 
   return (
