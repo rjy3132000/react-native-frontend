@@ -1,4 +1,4 @@
-import * as React from "react"; 
+import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Home from "../Screens/login";
@@ -17,4 +17,4 @@ const MyStack = () => {
   );
 };
 
-export default MyStack; 
+export default MyStack;

@@ -19,8 +19,9 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>First Name:</Text>
-      <TextInput
+      <Text style={styles.label}>Welcome to BlueBuy</Text>
+      {/* <Text style={styles.label}>First Name:</Text> */}
+      {/* <TextInput
         style={styles.input}
         value={name}
         onChangeText={(text) => setName(text)}
@@ -43,7 +44,7 @@ const Login = () => {
         ))
       ) : (
         <Text>There is no Note</Text>
-      )}
+      )} */}
     </View>
   );
 };
