@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { Button, Text, TextInput, View, StyleSheet } from "react-native";
+import {
+  Button,
+  Text,
+  TextInput,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../RTK/slice/todoSlice";
-// import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const notes = useSelector((state) => state.todos.todos);
@@ -20,6 +27,9 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Welcome to BlueBuy</Text>
+      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+        <Text style={styles.label}>Logout</Text>
+      </TouchableOpacity>
       {/* <Text style={styles.label}>First Name:</Text> */}
       {/* <TextInput
         style={styles.input}
